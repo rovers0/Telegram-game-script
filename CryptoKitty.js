@@ -41,18 +41,18 @@ if (!window.__BUY_SCRIPT_RUNNING__) {
         for (let i = 0; i < total; i++) {
             await fetchRequest(buy_cat);
             const randomDelay = 5;
-            console.log(` 🥚 Mua trứng "${buy_cat}" thành công `);
-            console.log(` ⏱️chờ ${randomDelay} giây mới xoa trứng tiếp`);
+            console.log(` Buy "${buy_cat}" 🥚 success `);
+            console.log(` ⏱️ wait ${randomDelay}s`);
             await delay(randomDelay);
 
             const zenClaimed = await claimEgg();
             const rdDelay = 5;
-            console.log(`🥚 Xoa trứng thành công: +${zenClaimed} ZEN`);
-            console.log(` ⏱️ chờ ${rdDelay} giây để tiếp tục mua trứng `);
+            console.log(`🥚 Claim ZEN success: +${zenClaimed} ZEN`);
+            console.log(` ⏱️ Wait ${rdDelay}s `);
             await delay(rdDelay);
 
             console.log("------------------------------------------------------");
-            console.log(`😉 Đã xoa: ${i + 1}/${total} lần trứng🥚.`);
+            console.log(`😉 Rubbed egg ${i + 1}/${total} 🥚`);
             console.log("------------------------------------------------------");
         }
 
