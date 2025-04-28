@@ -6,9 +6,10 @@ if (!window.__BUY_SCRIPT_RUNNING__) {
     (async () => {
         const buy_cat = 'hybrid';
         const total = 10;
+        const quantity = 1;
         const token = Telegram.WebView.initParams.tgWebAppData;
 
-        const fetchRequest = async (cat, quantity = 1) =>
+        const fetchRequest = async (cat, quantity) =>
             await fetch("https://zenegg-api.production.cryptokitties.dapperlabs.com/egg/api/den/buy-fancy-egg", {
                 headers: {
                     accept: "*/*",
@@ -57,3 +58,6 @@ if (!window.__BUY_SCRIPT_RUNNING__) {
         }
 
         console.log("🎉 DONE ALL");
+        window.__BUY_SCRIPT_RUNNING__ = false;
+    })(); 
+} 
