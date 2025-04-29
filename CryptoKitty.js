@@ -40,7 +40,7 @@ if (!window.__BUY_SCRIPT_RUNNING__) {
         const delay = t => new Promise(resolve => setTimeout(resolve, t * 1000));
 
         for (let i = 0; i < total; i++) {
-            await fetchRequest(buy_cat);
+            await fetchRequest(buy_cat, quantity);
             const randomDelay = 5;
             console.log(` Buy "${buy_cat}" 🥚 success `);
             console.log(` ⏱️ wait ${randomDelay}s`);
