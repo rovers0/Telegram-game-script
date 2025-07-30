@@ -4,16 +4,17 @@ if (!window.__BUY_SCRIPT_RUNNING__) {
     window.__BUY_SCRIPT_RUNNING__ = true;
 
     (async () => {
-        const buy_cat = 'hybrid';
+        const buy_cat = 'page';
         const total = 10;
         const quantity = 1;
         const token = Telegram.WebView.initParams.tgWebAppData;
 
         const fetchRequest = async (cat, quantity) =>
-            await fetch("https://zenegg-api.production.cryptokitties.dapperlabs.com/egg/api/den/buy-fancy-egg", {
+            await fetch("https://zenegg-api.production.cryptokitties.dapperlabs.com/egg/api/levels/rewind_1/buy-egg", {
                 headers: {
                     accept: "*/*",
                     "content-type": "application/json",
+                    "x-app-version": "20250716012602",
                     "x-id-token": token
                 },
                 body: JSON.stringify({
@@ -26,11 +27,12 @@ if (!window.__BUY_SCRIPT_RUNNING__) {
             });
 
         const claimEgg = async () =>
-            await fetch("https://zenegg-api.production.cryptokitties.dapperlabs.com/egg/api/den/claim-tao", {
+            await fetch("https://zenegg-api.production.cryptokitties.dapperlabs.com/egg/api/levels/rewind_1/claim-tao", {
                 headers: {
                     accept: "*/*",
                     "content-type": "application/json",
                     "x-source-attr": "source__notif__S3Starts",
+                    "x-app-version": "20250716012602",
                     "x-id-token": token
                 },
                 method: "POST",
@@ -60,4 +62,4 @@ if (!window.__BUY_SCRIPT_RUNNING__) {
         console.log("🎉 DONE ALL");
         window.__BUY_SCRIPT_RUNNING__ = false;
     })(); 
-} 
+}
